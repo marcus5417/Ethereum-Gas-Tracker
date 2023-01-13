@@ -1,0 +1,8 @@
+pragma solidity ^0.8.3;
+
+function getGasPrice() pure public returns (uint) {
+    // Fetch the current gas price from the Ethereum Gas Tracker
+    (bool success, uint gasPrice) = address(0x4Bb26091E1b2fA6f1F4c077c5d168A26Ea3BdEf3).getGasPrice();
+    require(success, "Failed to fetch gas price from Ethereum Gas Tracker");
+    return gasPrice;
+}
